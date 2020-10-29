@@ -17,8 +17,21 @@ export default function(hljs) {
           built_in: 'here Locales writeln',
           literal: 'false true nil none'
       },
-          
-    contains: [ hljs.NUMBER_MODE, hljs.COMMENT('/\\*', '\\*/', {contains: ['self']}), hljs.C_LINE_COMMENT_MODE ]
+      contains: [ hljs.C_NUMBER_MODE,
+                  hljs.COMMENT('/\\*', '\\*/', {contains: ['self']}),
+                  hljs.C_LINE_COMMENT_MODE,
+                  {
+                      className: 'string',
+                      variants: [
+                          {
+                              begin: '(b)?"', end: '"'
+                          },
+                          {
+                              begin: "(b)?'", end: "'"
+                          }
+                      ]
+                  },
+                ]
   }
 }
 
