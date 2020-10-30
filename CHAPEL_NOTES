@@ -1,0 +1,39 @@
+Do once to get started
+======================
+
+# Make sure 'node' and 'npm' are available.
+# On Mac:
+    brew install node
+
+# Install dependencies (from within root highlight.js directory):
+    npm install
+
+
+How to build/test Chapel interactively
+======================================
+
+# Build Chapel support only:
+    node tools/build.js -n chapel
+
+# Open interactive webpage for highlighting:
+    open tools/developer.html
+
+# Note that autodetect is currently "off" for Chapel, so you'll need
+  to select the language manually
+
+
+How to build/test all languages automatically
+=============================================
+
+# Build and test everything:
+    npm run build_and_test
+
+
+How to add a new test
+=====================
+
+# I developed test within interactive developer.html above, then paste
+# the Chapel code into test/markup/mytest.txt and the code from the
+# "Markup" window into test/markup/mytest.expect.txt
+
+
